@@ -24,7 +24,7 @@ export type RenderLinkFunction = (
   children: ReactNode[],
   parentNodes: ASTNode[],
   styles: any,
-  onLinkPress?: (url: string) => boolean,
+  onLinkPress?: (url: string) => Promise<void>,
 ) => ReactNode;
 
 export type RenderImageFunction = (
@@ -88,7 +88,7 @@ export interface MarkdownProps {
   markdownit?: MarkdownIt;
   mergeStyle?: boolean;
   debugPrintTree?: boolean;
-  onLinkPress?: (url: string) => boolean;
+  onLinkPress?: (url: string) => Promise<void>;
 }
 
 type MarkdownStatic = ComponentType<MarkdownProps>;
